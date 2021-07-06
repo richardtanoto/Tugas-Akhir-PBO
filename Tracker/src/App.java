@@ -23,6 +23,7 @@ public class App {
         initpembeli();
         System.out.println("===============================");
         initbarang();
+        System.out.println("===============================");
         // char ans = 'n';
         System.out.println("            Isi data karyawan           ");
         datakaryawan();
