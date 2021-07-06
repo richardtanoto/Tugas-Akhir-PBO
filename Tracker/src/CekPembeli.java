@@ -14,7 +14,7 @@ public class CekPembeli extends Pelanggan {
         for (Pelanggan customer1 : customer) {
            System.out.print(i);
            System.out.println(customer1.datacust());
-           i+=1:
+           i+=1;
         }      
     }
 }
