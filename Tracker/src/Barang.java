@@ -62,4 +62,5 @@ public class Barang{
         "\t\t" + getKodebarang() + "\t\t\t\t" + getNamabarang() + "\t\t\t" + getJumlahbarang() + "\t\t\t" + getHarga() + "\t" 
         ;
     }
+
 }
