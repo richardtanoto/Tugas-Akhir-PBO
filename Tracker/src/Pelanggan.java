@@ -1,7 +1,7 @@
 public class Pelanggan extends Orang {
     String member;
     static int dk;
-    static int i;
+    static int i = 1;
     public Pelanggan() {
     }
 
@@ -38,8 +38,8 @@ public class Pelanggan extends Orang {
         else if(member == "platinum" || member == "Platinum"){
             dk = 4000;
         }
-        else{
-            dk = 500;
+        else if(member == "not member" || member == "Not Member"){
+            dk = 0;
         }
         return dk;
     }
@@ -60,3 +60,4 @@ public class Pelanggan extends Orang {
         getAlamat() + "\t\t" +getMember();
     }
 }
+
