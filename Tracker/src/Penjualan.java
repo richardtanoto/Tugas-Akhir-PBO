@@ -49,18 +49,28 @@ public class Penjualan {
         return this.barangbeli = barangbeli;
     }
     
-
+    public int total(){
+        int total = getBarangbeli()*barang.getHarga();
+        return total;
+    }
+    public int bayar(){
+        int bayar = total() - pelanggan.diskon();
+        return bayar;
+    }
     @Override
     public String toString() {
         return 
             "ID Number          =  " + kasir.getID() + "\n" +
             "Kasir              =  " + kasir.getNama() + "\n" +
             "Nama pelanggan     =  " + pelanggan.getNama() + "\n" +
+            "Member pelanggan   =  " + pelanggan.getMember() + "\n" +
             "Barang             =  " + barang.getNamabarang() + "\n" +
             "Jumlah Barang      =  " + getBarangbeli() + "\n" +
-            "Total harga        =  " + getBarangbeli()*barang.getHarga() + "\n"
+            "Total harga        =  " + total() + "\n"+
+            "Total bayar        =  " + bayar() + "\n"
             ;
     }
+
     
     public int update(){
         int sisa = barang.getJumlahbarang() - getBarangbeli();
@@ -76,3 +86,4 @@ public class Penjualan {
     }
 
 }
+
