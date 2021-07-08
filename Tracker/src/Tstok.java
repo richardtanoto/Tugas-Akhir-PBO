@@ -2,17 +2,16 @@ import java.util.ArrayList;
 
 public class Tstok extends Barang{
     ArrayList<Barang> barangs = new ArrayList<Barang>();
-
-    static int jumlah ;
     
     void tambah(Barang b){
         barangs.add(b);
     }
+
     void menambahbarang(Barang b){
-        System.out.println(" Menambah Barang ");
+        System.out.println("        Menambah Barang         ");
         tambah(b);
-        System.out.println(b.toString());
-        
+        tampilkan();
+        b.databrg();
         System.out.println("Data Berhasil Ditambahkan !!!");
     }
 
