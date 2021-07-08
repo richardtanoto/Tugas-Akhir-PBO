@@ -62,7 +62,7 @@ public class Kasir extends Orang {
     public String dataka(){
         return
         "\t\t" + getID() + "\t\t\t" + getNama() + "\t\t" + getJeniskelamin() + "\t\t\t" + getNotelp() + "\t" +
-        getAlamat() + "\t\t" +getJamkerja() + "\t\t\t\t" + getGaji();
+        getAlamat() + "\t\t" +getJamkerja() + "\t\t\t\t" + getJamkerja()*getGaji();
     }
     
 }
