@@ -5,6 +5,11 @@ public class CekKasir extends Kasir{
     void cekkasir(Kasir k){
         kassa.add(k);
     }    
+    void cekkasir1(Kasir k){
+        kassa.add(k);
+        System.out.println("Data Berhasil Ditambahkan!");
+        System.out.println(k.tampilkansemuadata());
+    }    
 
 
     public void tampilkan(){
@@ -15,10 +20,7 @@ public class CekKasir extends Kasir{
             System.out.print(i);
             System.out.println(kasir.dataka());
             i+=1;
-        }       
-    }
-    
-    
-
-    
+        }   
+    }     
+      
 }
