@@ -1,7 +1,7 @@
 public class Pelanggan extends Orang {
     String member;
     static int dk;
-    static int i;
+    static int i = 1;
     public Pelanggan() {
     }
 
@@ -28,18 +28,18 @@ public class Pelanggan extends Orang {
         this.member = member;
     }
 
-    public int diskon(){
-        if(member == "silver" || member == "Silver"){
+    public int getDiskon(){
+        if(member.equals("silver")){
             dk = 1500;
         }
-        else if (member == "gold" || member == "Gold"){
+        else if (member.equals("gold")){
             dk = 2500;
         }
-        else if(member == "platinum" || member == "Platinum"){
+        else if(member.equals("platinum")){
             dk = 4000;
         }
-        else{
-            dk = 500;
+        else if(member.equals("not member")){
+            dk = 0;
         }
         return dk;
     }
