@@ -67,10 +67,14 @@ public class Penjualan {
     
     public String toString1() {
         return 
-            "ID Number          =  " + kasir.getID() + "\n" +
-            "Kasir              =  " + kasir.getNama() + "\n" +
-            "Nama pelanggan     =  " + pelanggan.getNama() + "\n" +
-            "Member pelanggan   =  " + pelanggan.getMember() + "\n" 
+        "                   SOHEE STORE                 \n" +
+        "                 Phone : 15072021              \n" +
+        "ID Number          =  " + kasir.getID() + "\n" +
+        "Kasir              =  " + kasir.getNama() + "\n" +
+        "-----------------------------------------------------\n" +
+        "Nama pelanggan     =  " + pelanggan.getNama() + "\n" +
+        "Member pelanggan   =  " + pelanggan.getMember() + "\n" +
+        "-----------------------------------------------------\n"
             ;
     }
 
