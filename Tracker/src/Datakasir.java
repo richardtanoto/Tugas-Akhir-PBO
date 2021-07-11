@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import javax.management.RuntimeErrorException;
 
 import jdk.jshell.spi.ExecutionControl.RunException;
-=======
-import java.util.Scanner;
->>>>>>> 57d42d54b5ea9d254c3423061615779cc7b507b2
 public class Datakasir {
     static Scanner inputdata = new Scanner(System.in);
     static Kasir kassa1 = new Kasir();
@@ -72,7 +68,6 @@ public class Datakasir {
             while(w){
                 System.out.print("No Telpon         :  ");
                 int notel = inputdata.nextInt();
-<<<<<<< HEAD
                 int l = String.valueOf(notel).length();
                 if(l >= 10){
                     System.out.println("Karakter maksimal 8 ! " + "karaktermu : " + l + "!");
@@ -98,27 +93,6 @@ public class Datakasir {
         try {
             boolean r = true;
             while(r){
-=======
-                if(notel>=10000){
-                    kassa1.setNotelp(notel);
-                    w = false;
-                }
-                else if(notel>100000){
-                    System.out.println("Karakter maksimal 8 ! ");
-                }
-                else if(notel<10000){
-                    System.out.println("Karakter harus 8 digit !");
-                }
-            }
-            
-        } catch (Exception e) {
-            System.out.println("Inputan Data Tidak Valid !");
-        }
-        try {
-            boolean r = true;
-            while(r){
-                inputdata.nextLine();
->>>>>>> 57d42d54b5ea9d254c3423061615779cc7b507b2
                 System.out.print("Alamat            :  ");
                 String alamat = inputdata.nextLine();
                 if(alamat.length()>=5){
@@ -128,24 +102,16 @@ public class Datakasir {
                 else if(alamat.length()<5){
                     System.out.println("Minimal 5 karakter untuk alamat !");
                 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 57d42d54b5ea9d254c3423061615779cc7b507b2
             }
         } catch (Exception e) {
             System.out.println("Inputan Data Tidak Valid !");
         }
-<<<<<<< HEAD
        
-=======
->>>>>>> 57d42d54b5ea9d254c3423061615779cc7b507b2
         try {
             boolean p = true;
             while(p){
                 System.out.print("Jumlah jam        :  ");
                 int jam = inputdata.nextInt();
-<<<<<<< HEAD
                 int j = String.valueOf(jam).length();
                 if(jam == 0 || jam <0){
                     System.out.println("Jam harus lebih besar dari 0!");
@@ -166,23 +132,8 @@ public class Datakasir {
                 }
             }   
         } catch (RuntimeErrorException e) {
-=======
-                if(jam == 0 || jam <0){
-                    System.out.println("Jam harus lebih besar dari 0!");
-                }
-                else if(jam >0){
-                    kassa1.setJamkerja(jam); 
-                    p = false;
-                }
-            }   
-        } catch (Exception e) {
->>>>>>> 57d42d54b5ea9d254c3423061615779cc7b507b2
             System.out.println("Inputan Data Tidak Valid !");
         } 
         cek.cekkasir1(kassa1);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 57d42d54b5ea9d254c3423061615779cc7b507b2
