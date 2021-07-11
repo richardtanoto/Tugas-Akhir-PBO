@@ -24,3 +24,4 @@ public class CekPembeli extends Pelanggan {
         }      
     }
 }
+
