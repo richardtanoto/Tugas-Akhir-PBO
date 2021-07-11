@@ -49,19 +49,31 @@ public class Penjualan {
         return this.barangbeli = barangbeli;
     }
     
-
     @Override
     public String toString() {
+        return
+            "                   SOHEE STORE                 \n" +
+            "                 Phone : 15072021              \n" +
+            "ID Number          =  " + kasir.getID() + "\n" +
+            "Kasir              =  " + kasir.getNama() + "\n" +
+            "-----------------------------------------------------\n" +
+            "Nama pelanggan     =  " + pelanggan.getNama() + "\n" +
+            "Member pelanggan   =  " + pelanggan.getMember() + "\n" +
+            "-----------------------------------------------------\n" +
+            "Barang             =  " + barang.getNamabarang() + "\n" +
+            "Jumlah Barang      =  " + getBarangbeli() + "\n"  
+            ;
+    }
+    
+    public String toString1() {
         return 
             "ID Number          =  " + kasir.getID() + "\n" +
             "Kasir              =  " + kasir.getNama() + "\n" +
             "Nama pelanggan     =  " + pelanggan.getNama() + "\n" +
-            "Barang             =  " + barang.getNamabarang() + "\n" +
-            "Jumlah Barang      =  " + getBarangbeli() + "\n" +
-            "Total harga        =  " + getBarangbeli()*barang.getHarga() + "\n"
+            "Member pelanggan   =  " + pelanggan.getMember() + "\n" 
             ;
     }
-    
+
     public int update(){
         int sisa = barang.getJumlahbarang() - getBarangbeli();
         return sisa;
