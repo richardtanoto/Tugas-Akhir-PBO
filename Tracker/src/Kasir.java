@@ -40,11 +40,8 @@ public class Kasir extends Orang {
     public String tampil() {
         return 
         "ID Number          = " + getID() + "\n" +
-        "Nama               = " + getNama() + "\n" +
-        "Jenis Kelamin      = " + getJeniskelamin() + "\n" +
-        "No Telpon          = " + getNotelp() + "\n" +
-        "Alamat             = " + getAlamat() + "\n"+
-        "Jumlah jam kerja   = " + getJamkerja() + "\n" ;
+        "Nama               = " + getNama() + "\n" 
+        ;
     }
 
     public String tampilkansemuadata(){
@@ -62,7 +59,7 @@ public class Kasir extends Orang {
     public String dataka(){
         return
         "\t\t" + getID() + "\t\t\t" + getNama() + "\t\t" + getJeniskelamin() + "\t\t\t" + getNotelp() + "\t" +
-        getAlamat() + "\t\t" +getJamkerja() + "\t\t\t\t" + getGaji();
+        getAlamat() + "\t\t" +getJamkerja() + "\t\t\t\t" + getJamkerja()*getGaji();
     }
-    
+   
 }
