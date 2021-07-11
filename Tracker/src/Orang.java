@@ -5,10 +5,8 @@ public class Orang {
     int notelp;
     String alamat;
 
-
     public Orang() {
     }
-
 
     public Orang(String ID, String nama, String jeniskelamin, int notelp, String alamat) {
         this.ID = ID;
