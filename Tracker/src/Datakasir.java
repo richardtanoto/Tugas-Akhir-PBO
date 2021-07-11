@@ -1,9 +1,6 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
-
 import javax.management.RuntimeErrorException;
 
-import jdk.jshell.spi.ExecutionControl.RunException;
 public class Datakasir {
     static Scanner inputdata = new Scanner(System.in);
     static Kasir kassa1 = new Kasir();
