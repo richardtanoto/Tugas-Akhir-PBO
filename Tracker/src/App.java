@@ -11,45 +11,111 @@ public class App {
     static CekPembeli cekPembeli = new CekPembeli();
     
     public static void main(String[] args) throws Exception {
-
-        initbill();
         char ans ='n';
         do{
-            menu();
-            int chs = inputdata.nextInt();
-            if (chs ==1){
-                Datakasir.datakaryawan();
-                initkaryawan();
-            }
-            else if(chs==2){
-                Showdata.datab();
-                initbarang();
-            }
-            else if(chs==3){
-                Datapembeli.datapembeli();
-                initpembeli();
-            }
-            else if(chs == 4){
-                initkaryawan();
-            }
-            else if(chs == 5){
-                initbarang();
-            }
-            else if(chs == 6){
-                initpembeli();
-            }
-            else if(chs == 7){
-                Showdata.show();
-            }
-            else if(chs ==0){
-                System.exit(0);
-            }
-    
+            initbill();
+            boolean n = true;
+            while(n){
+                menu();
+                int chs = inputdata.nextInt();
+                if (chs ==1){
+                    n=false;
+                    Datakasir.datakaryawan();
+                    initkaryawan();
+                }
+                else if(chs==2){
+                    n=false;
+                    Showdata.datab();
+                    initbarang();
+                }
+                else if(chs==3){
+                    n=false;
+                    Datapembeli.datapembeli();
+                    initpembeli();
+                }
+                else if(chs == 4){
+                    n=false;
+                    initkaryawan();
+                }
+                else if(chs == 5){
+                    n=false;
+                    initbarang();
+                }
+                else if(chs == 6){
+                    n=false;
+                    initpembeli();
+                }
+                else if(chs == 7){
+                    n=false;
+                    Showdata.kassa1.tampil();
+                    Showdata.show();
+                }
+                else if(chs ==0){
+                    n=false;
+                    System.exit(0);
+                }
+                else{
+                    System.out.println("Anda harus pilih diantara [0-7] !");
+                }
+            } 
+
+            System.out.print("Ulangi [y/n] ? ");
+            inputdata.nextLine();
+            String yn = inputdata.nextLine();
+            ans = yn.charAt(0);
+
         }while(ans == 'y' || ans == 'Y');
-    
+       
     }
 
-
+    public static void pembeli() {
+        try {
+            boolean a = true;
+            while(a){
+                System.out.print("Nama Pelanggan       : " );
+                String n = inputdata.nextLine();
+                if(n.length() >=3 ){
+                    pelanggan.setNama(n);
+                    a = false;
+                }
+                else if(n.length()<3){
+                    System.out.println("Minimal 3 karakter !");
+                }
+                else{
+                    System.out.println("Anda wajib menginput Nama!");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Inputan Tidak Valid !");
+        }
+        try {
+            boolean d =true;
+            while(d){    
+                System.out.println("                Pilih Loyalty                    \n");
+                System.out.println("Silver" + "\t\t\t" + "Gold"+ "\t\t\t" + "Platinum" + "\t\t\t" + "Not Member");
+                System.out.print("Loyalty           :  ");
+                String loyal = inputdata.nextLine();
+                String loyalty = loyal.toLowerCase();
+                if(loyalty.equals("silver") || loyalty.equals("gold") ||loyalty.equals("platinum")){
+                    pelanggan.setMember(loyal);
+                    System.out.println("Hello Member Sohee\n" + "Your member is " + loyalty + " right now...");
+                    System.out.println("data : " +pelanggan.getMember());
+                    d=false;
+                }
+                
+                else if (loyalty.equals("not member")){
+                    pelanggan.setMember(loyal);
+                    System.out.println("Not a member... :)");
+                    d=false;
+                }
+                else{
+                    System.out.println("Pilih diantara loyalty!");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Inputan Data Tidak Valid !");
+        }
+    }
     public static void menu(){
         System.out.println(" ----------- Welcome To SOHEE Store ----------- ");
         System.out.println("                   MENU UTAMA                   ");
