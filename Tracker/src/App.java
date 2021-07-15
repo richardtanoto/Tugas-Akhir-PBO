@@ -13,7 +13,6 @@ public class App {
     public static void main(String[] args) throws Exception {
         char ans ='n';
         do{
-            initbill();
             boolean n = true;
             while(n){
                 menu();
@@ -22,6 +21,7 @@ public class App {
                     n=false;
                     Datakasir.datakaryawan();
                     initkaryawan();
+                    break;
                 }
                 else if(chs==2){
                     n=false;
@@ -49,6 +49,10 @@ public class App {
                     n=false;
                     Showdata.kassa1.tampil();
                     Showdata.show();
+                }
+                else if(chs == 8){
+                    n=false;
+                    initbill();
                 }
                 else if(chs ==0){
                     n=false;
@@ -127,6 +131,7 @@ public class App {
         System.out.println("5. Cek Data Barang");
         System.out.println("6. Cek Data Pelanggan");
         System.out.println("7. Barang Beli");
+        System.out.println("8. History");
         System.out.println("0. Exit");
         System.out.print("Pilih     : ");
     }
