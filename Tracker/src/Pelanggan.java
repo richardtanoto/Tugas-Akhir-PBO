@@ -38,11 +38,7 @@ public class Pelanggan extends Orang {
         else if(member.equals("platinum")){
             dk = 4000;
         }
-<<<<<<< HEAD
-        else if(member.equals("not member")){
-=======
         else if(member == "not member" || member == "Not Member"){
->>>>>>> 57d42d54b5ea9d254c3423061615779cc7b507b2
             dk = 0;
         }
         return dk;
