@@ -1,14 +1,10 @@
-## Getting Started
+modifikasi sebelum UAS ada pada cari pelanggan dan juga beli barang 
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+untuk UAS 
+subclass ada pada class Kurir
+overloading ada pada class kurir dan cek ongkir
+file write dan read terjadi pada class kurir
+try catch serta validasi juga ada pada class datakurir
+sorting berdasarkan nama ada pada init kurir
+(Elvia Clarissa - 03082200020 -20TI2)
