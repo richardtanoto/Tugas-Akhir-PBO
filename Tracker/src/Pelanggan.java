@@ -2,6 +2,7 @@ public class Pelanggan extends Orang {
     String member;
     static int dk;
     static int i = 1;
+    int diskon;
     public Pelanggan() {
     }
 
@@ -13,7 +14,17 @@ public class Pelanggan extends Orang {
         this.alamat = alamat;
         this.member = member;
     }
-
+    
+    public Pelanggan(String ID, String nama, String jeniskelamin, int notelp, String alamat,String member,int diskon){
+        this.ID = ID;
+        this.nama = nama;
+        this.jeniskelamin = jeniskelamin;
+        this.notelp = notelp;
+        this.alamat = alamat;
+        this.member = member;
+        this.diskon = diskon;
+    }
+    
     public Pelanggan(String ID , String nama , String member ){
         this.ID = ID;
         this.nama = nama;
@@ -30,18 +41,22 @@ public class Pelanggan extends Orang {
 
     public int getDiskon(){
         if(member.equals("silver")){
-            dk = 1500;
+            return 1500;
         }
         else if (member.equals("gold")){
-            dk = 2500;
+            return 2500;
         }
         else if(member.equals("platinum")){
-            dk = 4000;
+            return 4000;
         }
         else if(member == "not member" || member == "Not Member"){
-            dk = 0;
+            return 0;
         }
-        return dk;
+        return diskon;
+    }
+
+    public void setDiskon(int diskon) {
+        this.diskon = diskon;
     }
 
     public String tampil() {
@@ -60,4 +75,3 @@ public class Pelanggan extends Orang {
         getAlamat() + "\t\t" +getMember();
     }
 }
-
