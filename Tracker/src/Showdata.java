@@ -550,9 +550,11 @@ public class Showdata  {
         } catch (Exception e) {
             System.out.println("Inputan Tidak Valid !");
         }
-        try {
-            boolean m = true;
-            while(m){
+
+        boolean m = true;
+        do {
+            try {
+                
                 System.out.print("Jumlah Barang     : " );
                 int jumlahbarang = inputdata.nextInt();
                 if(jumlahbarang< 0){
@@ -565,13 +567,16 @@ public class Showdata  {
                     barang.setJumlahbarang(jumlahbarang);
                     m = false;
                 } 
+            } catch (InputMismatchException e) {
+                System.out.println("Jumlah harus dalam bentuk integer!");
+                inputdata.nextLine();
             }
-        } catch (InputMismatchException e) {
-            System.out.println("Jumlah harus dalam bentuk integer!");
-        }
-        try {
-            boolean b = true;
-            while(b){
+        } while (m);
+
+        boolean b = true;
+        do {
+            try {
+                
                 System.out.print("Harga Barang      : " );
                 int hargabarang = inputdata.nextInt();
                 if(hargabarang<0){
@@ -588,11 +593,12 @@ public class Showdata  {
                 else{
                     System.out.println("Kesalahan input!");
                 }
-            }
-        
-        } catch (Exception e) {
-            System.out.println("Inputan Tidak Valid !");
-        }
+            }catch (InputMismatchException cek) {
+                System.out.println("Inputan Harga Tidak Valid ! \n Anda Harus menginput Integer ^^ ");
+                inputdata.nextLine();
+            } 
+            
+        } while (b);
         
         stok.menambahbarang(barang);
     }
