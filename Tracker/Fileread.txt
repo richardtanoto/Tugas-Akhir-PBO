@@ -1,0 +1,32 @@
+
+ID Number          = KR001
+Nama               = Zacky
+Jenis Kelamin      = pria
+No Telpon          = 12093487
+Alamat             = Flower
+Jumlah Pesanan     = 120
+Gaji               = 302500000
+
+ID Number          = KR002
+Nama               = Soobin
+Jenis Kelamin      = pria
+No Telpon          = 56473829
+Alamat             = Memoria
+Jumlah Pesanan     = 150
+Gaji               = 377500000
+
+ID Number          = KR003
+Nama               = Minho
+Jenis Kelamin      = pria
+No Telpon          = 12093487
+Alamat             = Crossroad
+Jumlah Pesanan     = 90
+Gaji               = 227500000
+
+ID Number          = KR004
+Nama               = Jackson
+Jenis Kelamin      = pria
+No Telpon          = 12093487
+Alamat             = GlassBead
+Jumlah Pesanan     = 90
+Gaji               = 227500000
