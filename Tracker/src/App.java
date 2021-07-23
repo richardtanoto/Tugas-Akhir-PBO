@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -8,14 +9,19 @@ public class App {
     static Tstok stok = new Tstok();
     static Penjualan penjual = new Penjualan(kassa1, barang, pelanggan);
     static CekKasir cek = new CekKasir();
+    static Cekkurir cekurir = new Cekkurir();
     static CekPembeli cekPembeli = new CekPembeli();
-    
+    static Cekongkir ong = new Cekongkir();
+    static ArrayList<Kurir> kurirb = new ArrayList<Kurir>();
+
     public static void main(String[] args) throws Exception {
+        
         char ans ='n';
         do{
             boolean n = true;
             while(n){
                 menu();
+                
                 int chs = inputdata.nextInt();
                 if (chs ==1){
                     n=false;
@@ -43,16 +49,40 @@ public class App {
                 }
                 else if(chs == 6){
                     n=false;
+                    Caripelanggan.pilih();
                     initpembeli();
                 }
                 else if(chs == 7){
                     n=false;
-                    Showdata.kassa1.tampil();
-                    Showdata.show();
+                    initkurirr();
                 }
                 else if(chs == 8){
                     n=false;
+                    Showdata.kassa1.tampil();
+                    Showdata.menupilih();
+                }
+                else if(chs ==9){
+                    n=false;
                     initbill();
+
+                }
+                else if(chs == 10){
+                    n=false;
+                    initkurir();
+                    Tulisdata.writen(kurirb);
+                }
+                else if(chs ==11){
+                    n=false;
+                    Cekongkir.menu();
+                    System.out.println(ong.toString());
+                }
+                else if(chs ==12){
+                    n=false;
+                    urutkurirr();
+                }
+                else if(chs == 13){
+                    n=false;
+                    DataKurir.datakurir();
                 }
                 else if(chs ==0){
                     n=false;
@@ -72,54 +102,6 @@ public class App {
        
     }
 
-    public static void pembeli() {
-        try {
-            boolean a = true;
-            while(a){
-                System.out.print("Nama Pelanggan       : " );
-                String n = inputdata.nextLine();
-                if(n.length() >=3 ){
-                    pelanggan.setNama(n);
-                    a = false;
-                }
-                else if(n.length()<3){
-                    System.out.println("Minimal 3 karakter !");
-                }
-                else{
-                    System.out.println("Anda wajib menginput Nama!");
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("Inputan Tidak Valid !");
-        }
-        try {
-            boolean d =true;
-            while(d){    
-                System.out.println("                Pilih Loyalty                    \n");
-                System.out.println("Silver" + "\t\t\t" + "Gold"+ "\t\t\t" + "Platinum" + "\t\t\t" + "Not Member");
-                System.out.print("Loyalty           :  ");
-                String loyal = inputdata.nextLine();
-                String loyalty = loyal.toLowerCase();
-                if(loyalty.equals("silver") || loyalty.equals("gold") ||loyalty.equals("platinum")){
-                    pelanggan.setMember(loyal);
-                    System.out.println("Hello Member Sohee\n" + "Your member is " + loyalty + " right now...");
-                    System.out.println("data : " +pelanggan.getMember());
-                    d=false;
-                }
-                
-                else if (loyalty.equals("not member")){
-                    pelanggan.setMember(loyal);
-                    System.out.println("Not a member... :)");
-                    d=false;
-                }
-                else{
-                    System.out.println("Pilih diantara loyalty!");
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("Inputan Data Tidak Valid !");
-        }
-    }
     public static void menu(){
         System.out.println(" ----------- Welcome To SOHEE Store ----------- ");
         System.out.println("                   MENU UTAMA                   ");
@@ -127,11 +109,16 @@ public class App {
         System.out.println("1. Tambah Data Karyawan");
         System.out.println("2. Tambah Data Barang");
         System.out.println("3. Tambah Data Pelanggan");
-        System.out.println("4. Cek Data Karyawan");
+        System.out.println("4. Cari Data Karyawan");
         System.out.println("5. Cek Data Barang");
-        System.out.println("6. Cek Data Pelanggan");
-        System.out.println("7. Barang Beli");
-        System.out.println("8. History");
+        System.out.println("6. Cari Data Pelanggan");
+        System.out.println("7. Cek Data Kurir");
+        System.out.println("8. Barang Beli");
+        System.out.println("9. History");
+        System.out.println("10. Read and Write (Data Kurir)");
+        System.out.println("11. Cek Ongkir");
+        System.out.println("12. Urut Kurir");
+        System.out.println("13. Tambah Data Kurir");
         System.out.println("0. Exit");
         System.out.print("Pilih     : ");
     }
@@ -168,7 +155,70 @@ public class App {
         cekPembeli.cekcustomer(pelanggan4);
         cekPembeli.cekcustomer(Datapembeli.pelanggan);
         cekPembeli.tampilkan();
+
     }
+    public static void initkurir(){
+        Kurir kurir1 = new Kurir("KR001","Zacky","pria",12093487, "Flower",120,2500000);
+        Kurir kurir2 = new Kurir("KR002","Soobin","pria",56473829, "Memoria",150,2500000);
+        Kurir kurir3 = new Kurir("KR003","Minho","pria",12093487, "Crossroad",90,2500000);
+        Kurir kurir4 = new Kurir("KR004","Jackson","pria",12093487, "GlassBead",90,2500000);
+        kurirb.add(kurir1);
+        kurirb.add(kurir2);
+        kurirb.add(kurir3);
+        kurirb.add(kurir4);
+        // untuk meread and write 
+    }
+
+    // menambahkan init data kurir mirip dengan init-init sebelumnya
+    public static void initkurirr(){
+        Kurir kurir1 = new Kurir("KR001","Zacky","pria",12093487, " Flower ",120,2500000);
+        Kurir kurir2 = new Kurir("KR002","Soobin","pria",56473829," Memoria ",150,2500000);
+        Kurir kurir3 = new Kurir("KR003","Minho","pria",12093487, "Crossroad",100,2500000);
+        Kurir kurir4 = new Kurir("KR004","Jackson","pria",12093487,"GlassBead",190,2500000);
+        cekurir.cekkurir(kurir1);
+        cekurir.cekkurir(kurir2);
+        cekurir.cekkurir(kurir3);
+        cekurir.cekkurir(kurir4);
+        cekurir.cekkurir(DataKurir.kurir);
+        cekurir.tampilkan();
+    }
+
+    public static void urutkurirr() {
+        Kurir kurir1 = new Kurir("KR001","Zacky","pria",12093487, "Flower",120,2860000);
+        Kurir kurir2 = new Kurir("KR002","Soobin","pria",56473829, "Memoria",150,2950000);
+        Kurir kurir3 = new Kurir("KR003","Minho","pria",12093487, "Crossroad",100,2800000);
+        Kurir kurir4 = new Kurir("KR004","Jackson","pria",12093487, "GlassBead",90,2770000);
+        
+        //pengurutan data secara ascending berdasarkan nama kurir (a-z) dengan bubble sorting 
+        String[] n = {kurir1.getNama(),kurir2.getNama(),kurir3.getNama(),kurir4.getNama()};
+        String p;
+        int z = 1;
+        // mengerprint data awal sebelum diurutkan dengan pemanfaatan for
+        System.out.println("Data Sebelum Diurutkan ");
+        for(int i=0; i<n.length ; i++){
+            System.out.println(z +". "+ n[i]);
+            z += 1;
+        }
+        // data diurutkan dengan perulangan 
+        for(int i=0; i<n.length-1; i++){
+            for(int j=i; j<n.length ; j++){
+                // disini terjadi pertukaran tempat dengan pemanfaatan compare
+                if(n[i].compareTo(n[j])>0){
+                    p = n[i];
+                    n[i] = n[j];
+                    n[j] = p;
+                }
+            }
+        }
+        // data berhasil diurutkan
+        System.out.println("Data Setelah Diurutkan ");
+        int a =1;
+        for(int i =0; i<n.length; i++){
+            System.out.println(a +". "+ n[i]);
+            a += 1;
+        }
+    }
+
 
     public static void initbill(){
         Kasir kassa6 = new  Kasir("KS001", "Eunbi");
@@ -180,4 +230,5 @@ public class App {
         System.out.println(penjualan1.toString());
         System.out.println(penjualan1.tampilsisa());
     }
+
 }
