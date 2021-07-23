@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Datapembeli {
     static Scanner inputdata = new Scanner(System.in);
@@ -58,31 +59,34 @@ public class Datapembeli {
         } catch (Exception e) {
             System.out.println("Inputan Data Tidak Valid !");
         }
-        try {
-            boolean w =true;
-            while(w){
+        boolean a = true;
+        do {
+            try {
+               
                 System.out.print("No Telpon         :  ");
                 int notel = inputdata.nextInt();
                 int l = String.valueOf(notel).length();
-                System.out.println("Lenght = " + l);
                 if(l >= 10){
-                    System.out.println("Karakter maksimal 8 ! ");
+                    System.out.println("Karakter maksimal 8 ! " + "karaktermu : " + l + "!");
                 }
-                else if(l < 8){
+                 else if(l < 8){
                     System.out.println("Karakter harus 8 digit !");
                 }
                 else if(l >= 8){
                     pelanggan.setNotelp(notel);
-                    w = false;
+                    a = false;
                 }
-                else{
+                else {
                     System.out.println("Error!");
                 }
+            } catch (InputMismatchException ime ) {
+                System.out.println("Inputan Data Tidak Valid ! \n  Anda harus input Integer!" );
+                inputdata.nextLine();
             }
             
-        } catch (Exception e) {
-            System.out.println("Inputan Data Tidak Valid !");
-        }
+        } while (a);
+
+        inputdata.nextLine();
         try {
             boolean r = true;
             while(r){
@@ -128,4 +132,5 @@ public class Datapembeli {
         }
         cekPembeli.cekcustomer1(pelanggan);
     }
+
 }
