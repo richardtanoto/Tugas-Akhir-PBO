@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import javax.management.RuntimeErrorException;
+import java.util.InputMismatchException;
 
 public class Datakasir {
     static Scanner inputdata = new Scanner(System.in);
@@ -60,30 +60,32 @@ public class Datakasir {
         } catch (Exception e) {
             System.out.println("Inputan Data Tidak Valid !");
         }
-        try {
-            boolean w =true;
-            while(w){
+        boolean a = true;
+        do {
+            try {
+               
                 System.out.print("No Telpon         :  ");
                 int notel = inputdata.nextInt();
                 int l = String.valueOf(notel).length();
                 if(l >= 10){
                     System.out.println("Karakter maksimal 8 ! " + "karaktermu : " + l + "!");
                 }
-                else if(l < 8){
+                 else if(l < 8){
                     System.out.println("Karakter harus 8 digit !");
                 }
                 else if(l >= 8){
                     kassa1.setNotelp(notel);
-                    w = false;
+                    a = false;
                 }
                 else {
                     System.out.println("Error!");
                 }
+            } catch (InputMismatchException ime ) {
+                System.out.println("Inputan Data Tidak Valid ! \n  Anda harus input Integer!" );
+                inputdata.nextLine();
             }
-     
-        } catch (NumberFormatException ex) {
-            System.out.println("Inputan Data Tidak Valid ! \n  Anda harus input Integer!");
-        }
+            
+        } while (a);
 
         inputdata.nextLine();
 
@@ -103,34 +105,37 @@ public class Datakasir {
         } catch (Exception e) {
             System.out.println("Inputan Data Tidak Valid !");
         }
-       
-        try {
-            boolean p = true;
-            while(p){
-                System.out.print("Jumlah jam        :  ");
-                int jam = inputdata.nextInt();
-                int j = String.valueOf(jam).length();
-                if(jam == 0 || jam <0){
+        boolean p = true;
+        do { 
+            try {
+                System.out.print("Jumlah Jam Kerja   :  ");
+                int jamkerja = inputdata.nextInt();
+                int j = String.valueOf(jamkerja).length();
+                if(jamkerja == 0 || jamkerja <0){
                     System.out.println("Jam harus lebih besar dari 0!");
                 }
-                else if(jam > 0 && jam <= 24){
-                    kassa1.setJamkerja(jam); 
+                else if(jamkerja > 0 && jamkerja <= 24){
+                    kassa1.setJamkerja(jamkerja);; 
                     p = false;
+                    cek.cekkasir1(kassa1);
                 }
-                else if(jam > 24){
+                else if(jamkerja > 24){
                     System.out.println("Maksimal 24 jam !");
                 }
-                else if(String.valueOf(jam).length() > 0 ){
-                    System.out.println("Must!!");
+                else if(String.valueOf(jamkerja).length() > 0 ){
+                    System.out.println("Anda harus mengisi lebih besar dari " + jamkerja + " !!");
                 }
-                
+                    
                 else if(j == '\n' || j == '\"' || j == '\''){
                     System.out.println("Tidak Valid!");
+                }   
+                else {
+                    System.out.println("Error!");
                 }
-            }   
-        } catch (RuntimeErrorException e) {
-            System.out.println("Inputan Data Tidak Valid !");
-        } 
-        cek.cekkasir1(kassa1);
+            } catch (InputMismatchException cek) {
+                System.out.println("Inputan Data Tidak Valid ! \n Anda Harus menginput Integer ^^ ");
+                inputdata.nextLine();
+            } 
+        } while (p);
     }
 }
