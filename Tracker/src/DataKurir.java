@@ -1,3 +1,4 @@
+// Elvia Clarissa - 03082200020 -20TI2
 // menambahkan data baru pada karyawan terkhususnya kepada kurir antar barang
 // ini sama dengan penambahan data pembeli dan juga data kasir 
 // yang membedakan hanyalah pada jumlah pesanan atau antaran
@@ -5,7 +6,6 @@
 // untuk tambahan gaji dihitung melalui jumlah antaran 
 // validasi try catch telah ditambahkan dan dimodifikasi pada bagian
 // nomor telepon dan jumlah pesanan 
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
