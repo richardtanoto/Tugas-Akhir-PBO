@@ -8,3 +8,10 @@ file write dan read terjadi pada class kurir
 try catch serta validasi juga ada pada class datakurir
 sorting berdasarkan nama ada pada init kurir
 (Elvia Clarissa - 03082200020 -20TI2)
+
+1. subclass ada pada class Satpam
+2. overloading ada pada class Satpam 
+3. file write dan read terjadi pada class Satpam
+4. try catch serta validasi juga ada pada class dataSatpam
+5. sorting alphabet secara ascending berdasarkan nama ada pada init Satpam
+(Richard Tanoto - 03082200019 -20TI2)
