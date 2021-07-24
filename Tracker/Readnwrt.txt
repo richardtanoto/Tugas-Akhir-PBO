@@ -1,32 +1,32 @@
-elvia
-ID Number          = KR001
-Nama               = Zacky
+Richard Tanoto-03082200019
+ID Number          = SP001
+Nama               = Agus
 Jenis Kelamin      = pria
-No Telpon          = 12093487
-Alamat             = Flower
+No Telpon          = 62765474
+Alamat             = Highbury
 Jumlah Pesanan     = 120
-Gaji               = 302500000
+Gaji               = 286000
 
-ID Number          = KR002
-Nama               = Soobin
+ID Number          = SP002
+Nama               = Rudi
 Jenis Kelamin      = pria
-No Telpon          = 56473829
-Alamat             = Memoria
+No Telpon          = 62545777
+Alamat             = Victoria
 Jumlah Pesanan     = 150
-Gaji               = 377500000
+Gaji               = 2950000
 
-ID Number          = KR003
-Nama               = Minho
+ID Number          = SP003
+Nama               = Kursi
 Jenis Kelamin      = pria
-No Telpon          = 12093487
-Alamat             = Crossroad
-Jumlah Pesanan     = 90
-Gaji               = 227500000
+No Telpon          = 62666777
+Alamat             = Glazers
+Jumlah Pesanan     = 100
+Gaji               = 2800000
 
-ID Number          = KR004
-Nama               = Jackson
+ID Number          = SP004
+Nama               = Jacky
 Jenis Kelamin      = pria
-No Telpon          = 12093487
-Alamat             = GlassBead
-Jumlah Pesanan     = 90
-Gaji               = 227500000
+No Telpon          = 62088087
+Alamat             = Starry
+Jumlah Pesanan     = 120
+Gaji               = 2860000
