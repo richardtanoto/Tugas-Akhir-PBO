@@ -56,7 +56,7 @@ public class Satpam extends Orang{
             ;
     }
 
-    // method menghitung total gaji yang diinput pada datakurir
+    // method menghitung total gaji yang diinput pada datasatpam
     // satpam mendapat uang tambahan ketika masuk 1 shift yaitu 3000 
     // gaji tetap adalah Rp 2.500.000
     // jadi tinggi gaji tergantung berapa shift
