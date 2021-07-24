@@ -15,3 +15,10 @@ sorting berdasarkan nama ada pada init kurir
 4. try catch serta validasi juga ada pada class dataSatpam
 5. sorting alphabet secara ascending berdasarkan nama ada pada init Satpam
 (Richard Tanoto - 03082200019 -20TI2)
+
+1. subclass ada pada class cleaningservis
+2. overloading ada pada class cleaningservis
+3. file write dan read terjadi pada class cleaningservis
+4. try catch serta validasi juga ada pada class datacleaningservis
+5. sorting berdasarkan nama ada pada init cleaningservis
+(Andrean Hartanto - 03082200005 - 20TI2)
