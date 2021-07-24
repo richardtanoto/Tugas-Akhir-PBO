@@ -11,7 +11,7 @@ sorting berdasarkan nama ada pada init kurir
 
 1. subclass ada pada class Satpam
 2. overloading ada pada class Satpam 
-3. file write dan read terjadi pada class Satpam dan disimpan di Readnwrt
+3. file write dan read terjadi pada class Satpam dan disimpan di Readnwrt dengan menggunakan writer dan bufferedreader
 4. try catch serta validasi juga ada pada class dataSatpam
 5. sorting alphabet secara ascending berdasarkan nama ada pada init Satpam
 (Richard Tanoto - 03082200019 -20TI2)
