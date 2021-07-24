@@ -1,5 +1,5 @@
 modifikasi sebelum UAS ada pada cari pelanggan dan juga beli barang 
-
+modifikasi ada pada pelanggan dan beli barang 
 
 untuk UAS 
 subclass ada pada class Kurir
