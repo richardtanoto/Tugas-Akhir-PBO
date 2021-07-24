@@ -11,10 +11,13 @@ public class App {
     static CekKasir cek = new CekKasir();
     static Cekkurir cekurir = new Cekkurir();
     static Ceksatpam cesatpam = new Ceksatpam();
+    static Cekcleaningservis cecleaningservis = new Cekcleaningservis();
     static CekPembeli cekPembeli = new CekPembeli();
     static Cekongkir ong = new Cekongkir();
     static ArrayList<Kurir> kurirb = new ArrayList<Kurir>();
     static ArrayList<Satpam> satpamb = new ArrayList<Satpam>();
+    static ArrayList<Cleaningservis> cleaningservisb = new ArrayList<Cleaningservis>();
+
 
     public static void main(String[] args) throws Exception {
         
@@ -98,10 +101,27 @@ public class App {
                     n=false;
                     DataSatpam.datasatpam();
                 }
+                else if(chs == 17){
+                    n=false;
+                    urutcleaningserviss();
+                }
+                else if(chs ==18){
+                    n=false;
+                    initcleaningserviss();
+                }
+                else if(chs == 19){
+                    n=false;
+                    DataCleaningservis.datacleaningservis();
+                }
                 else if(chs == 20){
                     n=false;
                     initsatpam();
                     Readnwrite.writen(satpamb);
+                }
+                else if(chs == 21){
+                    n=false;
+                    initcleaningservis();
+                    Datatulis.writen(cleaningservisb);
                 }
                 else if(chs ==0){
                     n=false;
@@ -141,7 +161,11 @@ public class App {
         System.out.println("14. Cek Data Satpam");
         System.out.println("15. Urut Satpam");
         System.out.println("16. Tambah Data Satpam");
+        System.out.println("17. Urut Cleaningservis");
+        System.out.println("18. Cek Data Cleaningservis");
+        System.out.println("19. Tambah Data Cleaningservis");
         System.out.println("20.  Read and Write (Data Satpam)");
+        System.out.println("21. Read and Write (Data Cleaningservis)");
         System.out.println("0. Exit");
         System.out.print("Pilih     : ");
     }
@@ -287,6 +311,67 @@ public class App {
         for(int i=0; i<n.length-1; i++){
             for(int j=i; j<n.length ; j++){
                 // disini terjadi pertukarandengan compare
+                if(n[i].compareTo(n[j])>0){
+                    p = n[i];
+                    n[i] = n[j];
+                    n[j] = p;
+                }
+            }
+        }
+        // data berhasil diurutkan
+        System.out.println("Data Setelah Diurutkan ");
+        int a =1;
+        for(int i =0; i<n.length; i++){
+            System.out.println(a +". "+ n[i]);
+            a += 1;
+        }
+    }
+    public static void initcleaningservis(){
+        Cleaningservis cleaningservis1 = new Cleaningservis("CS001","Mico","pria",67532222, "Star",130,2500000);
+        Cleaningservis cleaningservis2 = new Cleaningservis("CS002","Maichel","pria",67542222, "Stich",160,2500000);
+        Cleaningservis cleaningservis3 = new Cleaningservis("CS003","Franky","pria",67452223, "Victor",145,2500000);
+        Cleaningservis cleaningservis4 = new Cleaningservis("CS004","Patrick","pria",67342222, "Master",160,2500000);
+        cleaningservisb.add(cleaningservis1);
+        cleaningservisb.add(cleaningservis2);
+        cleaningservisb.add(cleaningservis3);
+        cleaningservisb.add(cleaningservis4);
+        // untuk meread and write 
+    }
+
+    // menambahkan init data kurir mirip dengan init-init sebelumnya
+    public static void initcleaningserviss(){
+        Cleaningservis cleaningservis1 = new Cleaningservis("CS001","Mico","pria",67532222, "Star",130,2500000);
+        Cleaningservis cleaningservis2 = new Cleaningservis("CS002","Maichel","pria",67542222, "Stich",160,2500000);
+        Cleaningservis cleaningservis3 = new Cleaningservis("CS003","Franky","pria",67452223, "Victor",145,2500000);
+        Cleaningservis cleaningservis4 = new Cleaningservis("CS004","Patrick","pria",67342222, "Master",160,2500000);
+        cecleaningservis.cekcleaningservis(cleaningservis1);
+        cecleaningservis.cekcleaningservis(cleaningservis2);
+        cecleaningservis.cekcleaningservis(cleaningservis3);
+        cecleaningservis.cekcleaningservis(cleaningservis4);
+        cecleaningservis.cekcleaningservis(DataCleaningservis.cleaningservis);
+        cecleaningservis.tampilkan();
+    }
+
+    public static void urutcleaningserviss() {
+        Cleaningservis cleaningservis1 = new Cleaningservis("CS001","Mico","pria",67532222, "Star",130,2880000);
+        Cleaningservis cleaningservis2 = new Cleaningservis("CS002","Maichel","pria",67542222, "Stich",160,2920000);
+        Cleaningservis cleaningservis3 = new Cleaningservis("CS003","Franky","pria",67452223, "Victor",145,2910000);
+        Cleaningservis cleaningservis4 = new Cleaningservis("CS004","Patrick","pria",67342222, "Master",160,2710000);
+        
+        //pengurutan data secara ascending berdasarkan nama cleaningservis (a-z) dengan bubble sorting 
+        String[] n = {cleaningservis1.getNama(),cleaningservis2.getNama(),cleaningservis3.getNama(),cleaningservis4.getNama()};
+        String p;
+        int z = 1;
+        // mengerprint data awal sebelum diurutkan dengan pemanfaatan for
+        System.out.println("Data Sebelum Diurutkan ");
+        for(int i=0; i<n.length ; i++){
+            System.out.println(z +". "+ n[i]);
+            z += 1;
+        }
+        // data diurutkan dengan perulangan 
+        for(int i=0; i<n.length-1; i++){
+            for(int j=i; j<n.length ; j++){
+                // disini terjadi pertukaran tempat dengan pemanfaatan compare
                 if(n[i].compareTo(n[j])>0){
                     p = n[i];
                     n[i] = n[j];
