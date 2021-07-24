@@ -10,6 +10,8 @@ class Tulisdata{
         FileWriter fout=null;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try{
+            System.out.print("Nama Anda ? ");
+            data = br.readLine();
             fout = new FileWriter(tempat);
            for (Kurir kurir2 : kurir) {
                data += kurir2.tampilkansemuadata();
