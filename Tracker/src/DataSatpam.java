@@ -1,11 +1,6 @@
-// Elvia Clarissa - 03082200020 -20TI2
-// menambahkan data baru pada karyawan terkhususnya kepada kurir antar barang
-// ini sama dengan penambahan data pembeli dan juga data kasir 
-// yang membedakan hanyalah pada jumlah pesanan atau antaran
-// dan pada kurir memiliki gaji tetap 
-// untuk tambahan gaji dihitung melalui jumlah antaran 
-// validasi try catch telah ditambahkan dan dimodifikasi pada bagian
-// nomor telepon dan jumlah pesanan 
+// Richard Tanoto - 03082200019 -20TI2
+// menambahkan data satpam dengan shift yang ditambahkan diatas gaji pokok
+// validasi try catch telah ditambahkan dan dimodifikasi 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
