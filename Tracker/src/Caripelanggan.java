@@ -2,6 +2,7 @@
 // dapat digunakan ketika pelanggan ingin membeli barang dari store jadi tanpa harus menginput ulang membernya
 // sudah dengan mudah bisa mengakses loyaltynya
 // dapat dicari berdasarkan nama ataupun ID number
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Caripelanggan extends Pelanggan{
 
@@ -156,46 +157,56 @@ public class Caripelanggan extends Pelanggan{
         System.out.println("Cari data : ");
         System.out.println("1. Cari nama");
         System.out.println("2. Cari ID");
-        System.out.print("Pilih : ");
-        int c = inputdata.nextInt();
         boolean a =true;
         inputdata.nextLine();
-        while(a){
-
-            if(c==1){
-                a=false;
-                carinama();
+        do {
+            try {
+                System.out.print("Pilih : ");
+                int c = inputdata.nextInt();
+                if(c==1){
+                    a=false;
+                    carinama();
+                }
+                else if(c==2){
+                    a =false;
+                    cariid();
+                }
+                else{
+                   System.out.println("Pilih antara 1/2 !");
+                }
+                
+            } catch (InputMismatchException e) {
+                System.out.println("Jumlah harus dalam bentuk integer!");
+                inputdata.nextLine();
             }
-            else if(c==2){
-                a =false;
-                cariid();
-            }
-            else{
-               System.out.println("Pilih antara 1/2 !");
-            }
-        }
+        } while (a);
     }
 
     public static void pilih1(){
         System.out.println("Cari data : ");
         System.out.println("1. Cari nama");
         System.out.println("2. Cari ID");
-        System.out.print("Pilih : ");
-        try {
-            int c = inputdata.nextInt();
-            inputdata.nextLine();
-            if(c==1){
-                carinamad();
+        boolean b=true;
+        do {
+            try {
+                System.out.print("Pilih : ");
+                int c = inputdata.nextInt();
+                inputdata.nextLine();
+                if(c==1){
+                    carinamad();
+                }
+                else if(c==2){
+                    cariidD();
+                }
+                else {
+                   System.out.println("Pilih antara 1/2 !");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Jumlah harus dalam bentuk integer!");
+                inputdata.nextLine();
             }
-            else if(c==2){
-                cariidD();
-            }
-            else {
-               System.out.println("Pilih antara 1/2 !");
-            }
-        } catch (Exception e) {
-            System.out.println("INVALID!");
-        }
+            
+        } while (b);
     }
 
    
