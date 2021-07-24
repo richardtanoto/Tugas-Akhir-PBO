@@ -247,7 +247,7 @@ public class App {
         // untuk meread and write 
     }
 
-    // menambahkan init data kurir mirip dengan init-init sebelumnya
+    // menambahkan init data satpam mirip dengan init-init sebelumnya
     public static void initsatpamm(){
         Satpam satpam1 = new Satpam("SP001","Agus","pria",62765474, "Highbury ",120,2500000);
         Satpam satpam2 = new Satpam("SP002","Rudi","pria",62545777, "Victoria ",150,2500000);
@@ -262,16 +262,16 @@ public class App {
     }
 
     public static void urutsatpamm() {
-        Satpam satpam1 = new Satpam("SP001","Agus","pria",62765474, "Highbury ", 120 ,286000);
+        Satpam satpam1 = new Satpam("SP001","Agus","pria",62765474, "Highbury ", 120 ,2860000);
         Satpam satpam2 = new Satpam("SP002","Rudi","pria",62545777, "Victoria ", 150 ,2950000);
         Satpam satpam3 = new Satpam("SP003","Kursi","pria",62666777,"Glazers  ", 100 ,2800000);
         Satpam satpam4 = new Satpam("SP004","Jacky","pria",62088087,"Starry   ", 120 ,2860000);
         
-        //pengurutan data secara ascending berdasarkan nama kurir (a-z) dengan bubble sorting 
+        //pengurutan data secara ascending berdasarkan nama satpam (a-z) dengan bubble sorting 
         String[] n = {satpam1.getNama(),satpam2.getNama(),satpam3.getNama(),satpam4.getNama()};
         String p;
         int z = 1;
-        // mengerprint data awal sebelum diurutkan dengan pemanfaatan for
+        // print data awal sebelum diurutkan dengan pemanfaatan for
         System.out.println("Data Sebelum Diurutkan ");
         for(int i=0; i<n.length ; i++){
             System.out.println(z +". "+ n[i]);
@@ -280,7 +280,7 @@ public class App {
         // data diurutkan dengan perulangan 
         for(int i=0; i<n.length-1; i++){
             for(int j=i; j<n.length ; j++){
-                // disini terjadi pertukaran tempat dengan pemanfaatan compare
+                // disini terjadi pertukarandengan compare
                 if(n[i].compareTo(n[j])>0){
                     p = n[i];
                     n[i] = n[j];
