@@ -1,0 +1,16 @@
+Sri Rahayu - 03082200013 -20TI2
+ID Number          = M001
+Nama               = Dody
+Jenis Kelamin      = pria
+No Telpon          = 87366271
+Alamat             = Mistar
+Jumlah jam kerja   = 10
+Gaji               = 2530000
+
+ID Number          = M002
+Nama               = Billie
+Jenis Kelamin      = pria
+No Telpon          = 87721655
+Alamat             = Sosial
+Jumlah Pesanan     = 12
+Gaji               = 2536000
