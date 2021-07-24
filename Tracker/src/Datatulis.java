@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 class Datatulis{
     public static void writen(ArrayList<Cleaningservis> cleaningservis){
-        String tempat ="/Users/Andrean/Documents/Java/Final/Tugas-Akhir-PBO/Tracker/Fileread.txt";
+        String tempat ="/Users/Andrean/Documents/Java/Final/Tugas-Akhir-PBO/Tracker/Data.txt";
         String data = "";
         FileWriter fout=null;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
