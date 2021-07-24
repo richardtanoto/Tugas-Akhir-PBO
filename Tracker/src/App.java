@@ -12,12 +12,13 @@ public class App {
     static Cekkurir cekurir = new Cekkurir();
     static Ceksatpam cesatpam = new Ceksatpam();
     static Cekcleaningservis cecleaningservis = new Cekcleaningservis();
+    static CekManager cekmngr = new CekManager();
     static CekPembeli cekPembeli = new CekPembeli();
     static Cekongkir ong = new Cekongkir();
     static ArrayList<Kurir> kurirb = new ArrayList<Kurir>();
     static ArrayList<Satpam> satpamb = new ArrayList<Satpam>();
     static ArrayList<Cleaningservis> cleaningservisb = new ArrayList<Cleaningservis>();
-
+    static ArrayList<Manager> managerb = new ArrayList<Manager>();
 
     public static void main(String[] args) throws Exception {
         
@@ -123,6 +124,23 @@ public class App {
                     initcleaningservis();
                     Datatulis.writen(cleaningservisb);
                 }
+                else if(chs == 22){
+                    n=false;
+                    initmanagerr();
+                }
+                else if(chs ==23){
+                    n=false;
+                    urutmanagerr();
+                }
+                else if(chs ==24){
+                    n=false;
+                    DataManager.datamanager();
+                }
+                else if(chs == 25){
+                    n=false;
+                    initmanager();
+                    Simpanbaca.writen(managerb);
+                }
                 else if(chs ==0){
                     n=false;
                     System.exit(0);
@@ -164,8 +182,12 @@ public class App {
         System.out.println("17. Urut Cleaningservis");
         System.out.println("18. Cek Data Cleaningservis");
         System.out.println("19. Tambah Data Cleaningservis");
-        System.out.println("20.  Read and Write (Data Satpam)");
+        System.out.println("20. Read and Write (Data Satpam)");
         System.out.println("21. Read and Write (Data Cleaningservis)");
+        System.out.println("22. Cek Data Manager");
+        System.out.println("23. Urut Manager");
+        System.out.println("24. Tambah Data Manager");
+        System.out.println("25. Read and Write (Data Manager)");
         System.out.println("0. Exit");
         System.out.print("Pilih     : ");
     }
@@ -388,6 +410,57 @@ public class App {
         }
     }
 
+    public static void initmanager(){
+        Manager manager1 = new Manager("M001","Dody","pria",87366271, "Mistar",10,2500000);
+        Manager manager2 = new Manager("M002","Billie","pria",87721655, "Sosial",12,2500000);
+        managerb.add(manager1);
+        managerb.add(manager2);
+        // untuk meread and write 
+    }
+
+    // menambahkan init data manager mirip dengan init-init sebelumnya
+    public static void initmanagerr(){
+        Manager manager1 = new Manager("M001","Dody","pria",87366271, "Mistar",10,2500000);
+        Manager manager2 = new Manager("M002","Billie","pria",87721655, "Sosial",12,2500000);
+        cekmngr.cekManager(manager1);
+        cekmngr.cekManager(manager2);
+        cekmngr.cekManager(DataManager.manager);
+        cekmngr.tampilkan();
+    }
+
+    public static void urutmanagerr() {
+        Manager manager1 = new Manager("M001","Dody","pria",87366271, "Mistar",10,2500000);
+        Manager manager2 = new Manager("M002","Billie","pria",87721655, "Sosial",12,2500000);
+        
+        //pengurutan data secara ascending berdasarkan nama manager (a-z) dengan bubble sorting 
+        String[] n = {manager1.getNama(),manager2.getNama()};
+        String p;
+        int z = 1;
+        // print data awal sebelum diurutkan dengan pemanfaatan for
+        System.out.println("Data Sebelum Diurutkan ");
+        for(int i=0; i<n.length ; i++){
+            System.out.println(z +". "+ n[i]);
+            z += 1;
+        }
+        // data diurutkan dengan perulangan 
+        for(int i=0; i<n.length-1; i++){
+            for(int j=i; j<n.length ; j++){
+                // disini terjadi pertukarandengan compare
+                if(n[i].compareTo(n[j])>0){
+                    p = n[i];
+                    n[i] = n[j];
+                    n[j] = p;
+                }
+            }
+        }
+        // data berhasil diurutkan
+        System.out.println("Data Setelah Diurutkan ");
+        int a =1;
+        for(int i =0; i<n.length; i++){
+            System.out.println(a +". "+ n[i]);
+            a += 1;
+        }
+    }
     public static void initbill(){
         Kasir kassa6 = new  Kasir("KS001", "Eunbi");
         Pelanggan pelanggan2 = new Pelanggan("CT009", "Kim", "Platinum");
