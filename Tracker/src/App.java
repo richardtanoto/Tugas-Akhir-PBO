@@ -98,6 +98,11 @@ public class App {
                     n=false;
                     DataSatpam.datasatpam();
                 }
+                else if(chs == 20){
+                    n=false;
+                    initsatpam();
+                    Readnwrite.writen(satpamb);
+                }
                 else if(chs ==0){
                     n=false;
                     System.exit(0);
@@ -136,6 +141,7 @@ public class App {
         System.out.println("14. Cek Data Satpam");
         System.out.println("15. Urut Satpam");
         System.out.println("16. Tambah Data Satpam");
+        System.out.println("20.  Read and Write (Data Satpam)");
         System.out.println("0. Exit");
         System.out.print("Pilih     : ");
     }
