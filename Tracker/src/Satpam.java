@@ -57,10 +57,9 @@ public class Satpam extends Orang{
     }
 
     // method menghitung total gaji yang diinput pada datakurir
-    // fyi para kurir mendapat uang tambahan ketika mengantar 1 antaran/paket 
-    // jadi 1 antaran diberi 3000 (komisi)
-    // gaji tetap kurir = Rp 2.500.000
-    // jadi tinggi gaji tergantung berapa antaran kurir 
+    // satpam mendapat uang tambahan ketika masuk 1 shift yaitu 3000 
+    // gaji tetap adalah Rp 2.500.000
+    // jadi tinggi gaji tergantung berapa shift
     int totalgaji(int g , int a) {
         g = getShift()*getGaji();
         int total = g+a;
