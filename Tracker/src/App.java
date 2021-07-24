@@ -10,9 +10,11 @@ public class App {
     static Penjualan penjual = new Penjualan(kassa1, barang, pelanggan);
     static CekKasir cek = new CekKasir();
     static Cekkurir cekurir = new Cekkurir();
+    static Ceksatpam cesatpam = new Ceksatpam();
     static CekPembeli cekPembeli = new CekPembeli();
     static Cekongkir ong = new Cekongkir();
     static ArrayList<Kurir> kurirb = new ArrayList<Kurir>();
+    static ArrayList<Satpam> satpamb = new ArrayList<Satpam>();
 
     public static void main(String[] args) throws Exception {
         
@@ -84,6 +86,18 @@ public class App {
                     n=false;
                     DataKurir.datakurir();
                 }
+                else if(chs == 14){
+                    n=false;
+                    initsatpamm();
+                }
+                else if(chs ==15){
+                    n=false;
+                    urutsatpamm();
+                }
+                else if(chs == 16){
+                    n=false;
+                    DataSatpam.datasatpam();
+                }
                 else if(chs ==0){
                     n=false;
                     System.exit(0);
@@ -119,6 +133,9 @@ public class App {
         System.out.println("11. Cek Ongkir");
         System.out.println("12. Urut Kurir");
         System.out.println("13. Tambah Data Kurir");
+        System.out.println("14. Cek Data Satpam");
+        System.out.println("15. Urut Satpam");
+        System.out.println("16. Tambah Data Satpam");
         System.out.println("0. Exit");
         System.out.print("Pilih     : ");
     }
@@ -218,7 +235,67 @@ public class App {
             a += 1;
         }
     }
+    public static void initsatpam(){
+        Satpam satpam1 = new Satpam("SP001","Agus","pria",62765474, "Highbury ",120,2500000);
+        Satpam satpam2 = new Satpam("SP002","Rudi","pria",62545777, "Victoria ",150,2500000);
+        Satpam satpam3 = new Satpam("SP003","Kursi","pria",62666777,"Glazers  ",100,2500000);
+        Satpam satpam4 = new Satpam("SP004","Jacky","pria",62088087,"Starry   ",200,2500000);
+        satpamb.add(satpam1);
+        satpamb.add(satpam2);
+        satpamb.add(satpam3);
+        satpamb.add(satpam4);
+        // untuk meread and write 
+    }
 
+    // menambahkan init data kurir mirip dengan init-init sebelumnya
+    public static void initsatpamm(){
+        Satpam satpam1 = new Satpam("SP001","Agus","pria",62765474, "Highbury ",120,2500000);
+        Satpam satpam2 = new Satpam("SP002","Rudi","pria",62545777, "Victoria ",150,2500000);
+        Satpam satpam3 = new Satpam("SP003","Kursi","pria",62666777,"Glazers  ",100,2500000);
+        Satpam satpam4 = new Satpam("SP004","Jacky","pria",62088087,"Starry   ",120,2500000);
+        cesatpam.ceksatpam(satpam1);
+        cesatpam.ceksatpam(satpam2);
+        cesatpam.ceksatpam(satpam3);
+        cesatpam.ceksatpam(satpam4);
+        cesatpam.ceksatpam(DataSatpam.satpam);
+        cesatpam.tampilkan();
+    }
+
+    public static void urutsatpamm() {
+        Satpam satpam1 = new Satpam("SP001","Agus","pria",62765474, "Highbury ", 120 ,286000);
+        Satpam satpam2 = new Satpam("SP002","Rudi","pria",62545777, "Victoria ", 150 ,2950000);
+        Satpam satpam3 = new Satpam("SP003","Kursi","pria",62666777,"Glazers  ", 100 ,2800000);
+        Satpam satpam4 = new Satpam("SP004","Jacky","pria",62088087,"Starry   ", 120 ,2860000);
+        
+        //pengurutan data secara ascending berdasarkan nama kurir (a-z) dengan bubble sorting 
+        String[] n = {satpam1.getNama(),satpam2.getNama(),satpam3.getNama(),satpam4.getNama()};
+        String p;
+        int z = 1;
+        // mengerprint data awal sebelum diurutkan dengan pemanfaatan for
+        System.out.println("Data Sebelum Diurutkan ");
+        for(int i=0; i<n.length ; i++){
+            System.out.println(z +". "+ n[i]);
+            z += 1;
+        }
+        // data diurutkan dengan perulangan 
+        for(int i=0; i<n.length-1; i++){
+            for(int j=i; j<n.length ; j++){
+                // disini terjadi pertukaran tempat dengan pemanfaatan compare
+                if(n[i].compareTo(n[j])>0){
+                    p = n[i];
+                    n[i] = n[j];
+                    n[j] = p;
+                }
+            }
+        }
+        // data berhasil diurutkan
+        System.out.println("Data Setelah Diurutkan ");
+        int a =1;
+        for(int i =0; i<n.length; i++){
+            System.out.println(a +". "+ n[i]);
+            a += 1;
+        }
+    }
 
     public static void initbill(){
         Kasir kassa6 = new  Kasir("KS001", "Eunbi");
