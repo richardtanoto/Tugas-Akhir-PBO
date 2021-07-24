@@ -1,0 +1,32 @@
+Andrean Hartanto - 0308200005
+ID Number          = CS001
+Nama               = Mico
+Jenis Kelamin      = pria
+No Telpon          = 67532222
+Alamat             = Star
+Jumlah Pesanan     = 130
+Gaji               = 2880000
+
+ID Number          = CS002
+Nama               = Maichel
+Jenis Kelamin      = pria
+No Telpon          = 67542222
+Alamat             = Stich
+Jumlah Pesanan     = 160
+Gaji               = 2920000
+
+ID Number          = CS003
+Nama               = Franky
+Jenis Kelamin      = pria
+No Telpon          = 67452223
+Alamat             = Victor
+Jumlah Pesanan     = 145
+Gaji               = 2910000
+
+ID Number          = CS004
+Nama               = Patrick
+Jenis Kelamin      = pria
+No Telpon          = 67342222
+Alamat             = Master
+Jumlah Pesanan     = 160
+Gaji               = 2710000
