@@ -33,7 +33,7 @@ sorting berdasarkan nama ada pada init kurir
 1. subclass ada pada class manager
 2. overloading ada pada class manager
 3. file write dan read terjadi pada class manager
-4. try catch serta validasi juga ada pada class datacmanager
+4. try catch serta validasi juga ada pada class datamanager
 5. sorting berdasarkan nama ada pada init manager
 (Sri Rahayu - 03082200013 - 20TI2)
 
